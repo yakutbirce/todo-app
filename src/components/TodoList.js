@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/TodoList.css'; // Yolu düzeltilmiş hali
+import '../styles/TodoList.css';
 import TodoItem from './TodoItem';
 
 
