@@ -1,13 +1,11 @@
+// src/components/TodoItem.js
 import React from 'react';
+import '../styles/TodoList.css';
 
-
-
-
-function TodoItem({ todo, onDelete, onEdit }) {
+function TodoItem({ todo, onDelete }) {
     return (
         <li>
             {todo}
-            <button onClick={onEdit}>Düzenle</button>
             <button onClick={onDelete}>Sil</button>
         </li>
     );

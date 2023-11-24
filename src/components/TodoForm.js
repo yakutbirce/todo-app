@@ -1,19 +1,21 @@
+// src/components/TodoForm.js
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo, updateTodo } from '../redux/todoSlice';
 import '../styles/TodoForm.css';
 
-
-
-function TodoForm({ onAdd, onUpdate, editTodo }) {
+function TodoForm({ editTodo }) {
     const [input, setInput] = useState('');
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (input.trim() === '') return;
 
         if (editTodo === null) {
-            onAdd(input);
+            dispatch(addTodo(input));
         } else {
-            onUpdate(input);
+            dispatch(updateTodo({ index: editTodo, text: input }));
         }
 
         setInput('');
